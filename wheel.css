@@ -1,0 +1,105 @@
+.wheel {
+    background-color: rgb(0, 0, 54);
+    aspect-ratio: 1;
+    position: relative;
+    width: 50%;
+    border-radius: 100%;
+    border-style: groove;
+    border-width: 3vw;
+    border-color: gray;
+    box-shadow: 
+        inset 1vw 1vw 20vw #f0f,   /* inner left magenta short */
+        inset -1vw -1vw 20vw #0ff,   /* inner left magenta short */
+        -1vw -1vw 5vw #05012c,            /* outer white */
+        1vw 1vw 5vw #05012c;            /* outer white */
+}
+
+.number {
+    width: 8%;
+    height: 8%;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    margin: -4%;
+    color:white;  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25%;
+    font-weight: bold;
+    border-style:groove;
+    border-width: 0.3vw;
+    border-color: rgb(11, 20, 155);
+}
+
+.number.red {
+    background-color: red;
+}
+
+.number.black {
+    background-color: black;
+}
+
+.number.green {
+    background-color: green;
+}
+
+.number.light {
+    animation: infinite alternate-reverse forwards zoom 0.2s;
+    transition: 
+        scale 3s,
+        box-shadow 3s;
+    box-shadow: 
+        inset 0 0 8px #fff,      /* inner white */
+        inset 2px 0 8px rgb(255, 251, 0),   /* inner left magenta short */
+        inset -2px 0 8px #0ff,  /* inner right cyan short */
+        inset 2px 0 8px rgb(255, 217, 0),  /* inner left magenta broad */
+        0 0 5px #fff,            /* outer white */
+        2px 0 8px rgb(255, 123, 0);         /* outer right cyan */
+}
+
+span.number.text {
+    rotate: 90deg;
+    font-size: 2vw;
+    border-style: none;
+    user-select: none;
+}
+
+.roll {
+    top: 50%;
+    left: 50%;
+    width: 30%;
+    height: 30%;
+    margin: -15%;
+    border-radius: 100%;
+    border-style: none;
+    font-size: 3vw;
+
+    box-shadow: 
+        inset 0 0 15px #fff,      /* inner white */
+        inset 4px 0 30px #f0f,   /* inner left magenta short */
+        inset -4px 0 30px #0ff,  /* inner right cyan short */
+        inset 4px 0 30px #f0f,  /* inner left magenta broad */
+        inset -4px 0 30px #0ff, /* inner right cyan broad */
+        -10px 0 80px #f0f,        /* outer left magenta */
+        10px 0 80px #0ff;         /* outer right cyan */
+    position: absolute;
+}
+
+@keyframes zoom {
+    0% {
+        scale: 1;
+    }
+    100% {
+        scale: 1.05;
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(1080deg);
+    }
+}
