@@ -81,7 +81,7 @@ function wheel()
         last_number = Math.floor(Math.random()*36)
         array[last_number].classList.add("light");
 
-        setTimeout(function(){wheel.style.animation="spin 3s forwards"}, 10);
+        setTimeout(function(){wheel.style.animation="spin 3s forwards"}, 100);
         wheel.style.animation = "";
         return last_number;
     }
