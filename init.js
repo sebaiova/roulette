@@ -144,7 +144,6 @@ function init_wheel()
             stack += cells[i].bet.innerHTML * (Number.isInteger(cells[i].number) ? 36 : 2);
 
         alert("Won " + stack + " coins.")
-        bussy = false;
     }
 
     function roll()
@@ -159,6 +158,7 @@ function init_wheel()
         setTimeout(()=>{ blow_coins(); }, 4000);
         setTimeout(()=>{ pay();
                          light_down(); }, 5000);
+        bussy = false;
     }
 };
 
