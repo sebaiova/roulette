@@ -6,8 +6,8 @@
     grid-area: 2 / span 2;
     width: 80%;
     box-shadow: 
-        0.5vw 0.5vw 0.5vw blue,            /* outer white */
-        -0.5vw -0.5vw 1vw purple;            /* outer white */
+        0.5vw 0.5vw 1vw blue,
+        -0.5vw -0.5vw 1vw purple;
 }
 
 .cell {
@@ -94,12 +94,11 @@
     position:absolute;
     left:auto;
     right: 0;
-    top:0;
+    top: 0;
     bottom: auto;
     flex-grow: 2;
     aspect-ratio: 1/1;
     width:2.5vw;
-
     color: white;
     background-color: blue;
     border-radius: 100%;
@@ -127,8 +126,8 @@
     border-color: goldenrod;
 
     box-shadow: 
-    inset -1vw -1vw 5vw blue,            /* outer white */
-    inset 1vw 1vw 5vw purple;            /* outer white */
+    inset -1vw -1vw 5vw blue,
+    inset 1vw 1vw 5vw purple;
 }
 
 span.rotated {

@@ -5,11 +5,11 @@ let bussy = false;
 
 function init()
 {
-    tableboard();
-    wheel();
+    init_tableboard();
+    init_wheel();
 }
 
-function tableboard() 
+function init_tableboard() 
 {
     const table = document.getElementById("tableboard");
 
@@ -47,9 +47,19 @@ function tableboard()
 
         return cell;
     }
+
+    function do_bet(ev)
+    {
+        if(bussy)
+            return;
+    
+        const cell = ev.currentTarget;
+        if((++cell.bet.innerHTML)==1)
+            cell.bet.setAttribute("class", "bet");
+    }
 }
 
-function wheel()
+function init_wheel()
 {
     const wheel = document.getElementById("wheel");
     const array = new Array();
@@ -81,8 +91,8 @@ function wheel()
         last_number = Math.floor(Math.random()*36)
         array[last_number].classList.add("light");
 
-        setTimeout(function(){wheel.style.animation="spin 3s forwards"}, 10);
         wheel.style.animation = "";
+        setTimeout(function(){wheel.style.animation="spin 3s forwards"}, 100);
         return last_number;
     }
 
@@ -91,11 +101,11 @@ function wheel()
         cell_array[n].classList.add("light");
         if(n!=0)
         {
-            if(n%2==0)
+            if(n%2==0)  /*is black*/
                 cell_array[38].classList.add("light");
             else 
                 cell_array[37].classList.add("light");
-            if(n<19)
+            if(n<19)    /* is minor */
                 cell_array[40].classList.add("light");
             else
                 cell_array[39].classList.add("light");
@@ -110,19 +120,20 @@ function wheel()
             coins[i].style.animation = "1s blow forwards";
 
         setTimeout(()=>{
-
             for (let i = 0; i < coins.length; i++)
             {
                 coins[i].setAttribute("class", "bet null");
                 coins[i].style.animation = "";
                 coins[i].innerHTML = 0;
             }
-
-            cell_array.forEach(cell => {
-                cell.classList.remove("light");
-            });
-
         }, 1000);
+    }
+
+    function light_down()
+    {
+        cell_array.forEach(cell => {
+            cell.classList.remove("light");
+        });
     }
 
     function pay()
@@ -132,7 +143,7 @@ function wheel()
         for(let i=0; i<cells.length; i++) 
             stack += cells[i].bet.innerHTML * (Number.isInteger(cells[i].number) ? 36 : 2);
 
-        console.log("Won " + stack + " coins.")
+        alert("Won " + stack + " coins.")
         bussy = false;
     }
 
@@ -142,23 +153,13 @@ function wheel()
             return;
         bussy = true;
 
-        const n = spin();
+        const n = spin();   /*get random number n*/
         
-        setTimeout(()=>{light_up(n)}, 2200);
-        setTimeout(()=>{blow_coins()}, 4000);
-        setTimeout(()=>{pay()}, 5000);
+        setTimeout(()=>{ light_up(n);  }, 2200);
+        setTimeout(()=>{ blow_coins(); }, 4000);
+        setTimeout(()=>{ pay();
+                         light_down(); }, 5000);
     }
 };
-
-function do_bet(ev)
-{
-    if(bussy)
-        return;
-
-    const cell = ev.currentTarget;
-    if((++cell.bet.innerHTML)==1)
-        cell.bet.setAttribute("class", "bet");
-}
-
 
 

@@ -8,10 +8,10 @@
     border-width: 3vw;
     border-color: gray;
     box-shadow: 
-        inset 1vw 1vw 20vw #f0f,   /* inner left magenta short */
-        inset -1vw -1vw 20vw #0ff,   /* inner left magenta short */
-        -1vw -1vw 5vw #05012c,            /* outer white */
-        1vw 1vw 5vw #05012c;            /* outer white */
+        inset 1vw 1vw 20vw #f0f,
+        inset -1vw -1vw 20vw #0ff,
+        -1vw -1vw 5vw #05012c,
+        1vw 1vw 5vw #05012c;
 }
 
 .number {
@@ -50,12 +50,12 @@
         scale 3s,
         box-shadow 3s;
     box-shadow: 
-        inset 0 0 8px #fff,      /* inner white */
-        inset 2px 0 8px rgb(255, 251, 0),   /* inner left magenta short */
-        inset -2px 0 8px #0ff,  /* inner right cyan short */
-        inset 2px 0 8px rgb(255, 217, 0),  /* inner left magenta broad */
-        0 0 5px #fff,            /* outer white */
-        2px 0 8px rgb(255, 123, 0);         /* outer right cyan */
+        inset 0 0 8px #fff,
+        inset 2px 0 8px rgb(255, 251, 0), 
+        inset -2px 0 8px #0ff,
+        inset 2px 0 8px rgb(255, 217, 0),
+        0 0 5px #fff,
+        2px 0 8px rgb(255, 123, 0);
 }
 
 span.number.text {
@@ -74,15 +74,14 @@ span.number.text {
     border-radius: 100%;
     border-style: none;
     font-size: 3vw;
-
     box-shadow: 
-        inset 0 0 15px #fff,      /* inner white */
-        inset 4px 0 30px #f0f,   /* inner left magenta short */
-        inset -4px 0 30px #0ff,  /* inner right cyan short */
-        inset 4px 0 30px #f0f,  /* inner left magenta broad */
-        inset -4px 0 30px #0ff, /* inner right cyan broad */
-        -10px 0 80px #f0f,        /* outer left magenta */
-        10px 0 80px #0ff;         /* outer right cyan */
+        inset 0 0 15px #fff,
+        inset 4px 0 30px #f0f,
+        inset -4px 0 30px #0ff,
+        inset 4px 0 30px #f0f,
+        inset -4px 0 30px #0ff,
+        -10px 0 80px #f0f,
+        10px 0 80px #0ff;
     position: absolute;
 }
 
